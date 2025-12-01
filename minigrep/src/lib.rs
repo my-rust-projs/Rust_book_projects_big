@@ -15,7 +15,7 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a st
     let mut results = Vec::new();
 
     for line in contents.lines() {
-        if line.to_lowercase().contains(&query) {
+        if line.to_lowercase().contains(&query) { // need to use a & here since .to_lowercase() returns a String not a slice
             results.push(line);
         }
     }
